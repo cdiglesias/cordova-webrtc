@@ -1,0 +1,19 @@
+{
+  "name": "cordova-webrtc",
+  "version": "3.0.4",
+  "displayName": "Video Conferencing",
+  "cordova": {
+    "platforms": [],
+    "plugins": {}
+  },
+  "dependencies": {},
+  "scripts": {
+    "preinstall": "cordova plugin add git+https://github.com/devgeeks/Canvas2ImagePlugin.git cordova-plugin-android-permissions@latest cordova-plugin-device@latest cordova-plugin-iosrtc@latest cordova-plugin-statusbar@latest cordova-plugin-whitelist@latest",
+    "install": "cordova platform add android@6.3.0 ios@4.4.0",
+    "postinstall": "cordova build android && cordova prepare ios ",
+    "xcode": "cd platforms/ios && xed .",
+    "studio": "open -a /Applications/Android\\ Studio.app platforms/android/",
+    "ios": "cordova run ios --buildFlag='-UseModernBuildSystem=0'",
+    "android": "cordova run android"
+  }
+}

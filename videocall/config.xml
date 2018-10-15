@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.cdiglesias.webrtc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>WebRTC Cordova</name>
+    <icon src="www/img/icon.png" />
+    <description>WebRTC app Testing</description>
+    <author email="author@email.com" href="https://cdiglesias.com">Carlos D. Iglesias</author>
+    <content src="index.html" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+    <platform name="android">
+        <preference name="Orientation" value="default" />
+        <preference name="KeepRunning" value="true" />
+        <preference name="AndroidLaunchMode" value="singleTop" />
+    </platform>
+    <platform name="ios">
+        <icon width="57"  height="57"  src="res/icon/ios/icon-57.png"/>
+        <icon width="114" height="114" src="res/icon/ios/icon-57-2x.png"/>
+        <icon width="72"  height="72"  src="res/icon/ios/icon-72.png"/>
+        <icon width="144" height="144" src="res/icon/ios/icon-72-2x.png"/>
+
+        <splash width="2048" height="1536" src="res/screen/ios/screen-ipad-landscape-2x.png"  />
+        <splash width="1024" height="768"  src="res/screen/ios/screen-ipad-landscape.png"  />
+        <splash width="1536" height="2048" src="res/screen/ios/screen-ipad-portrait-2x.png"  />
+        <splash width="768"  height="1024" src="res/screen/ios/screen-ipad-portrait.png"  />
+        <splash width="960"  height="640"  src="res/screen/ios/screen-iphone-landscape-2x.png" />
+        <splash width="480"  height="320"  src="res/screen/ios/screen-iphone-landscape.png"  />
+        <splash width="640"  height="960"  src="res/screen/ios/screen-iphone-portrait-2x.png"  />
+        <splash width="640"  height="1136" src="res/screen/ios/screen-iphone-portrait-568h-2x.png"  />
+        <splash width="320"  height="480"  src="res/screen/ios/screen-iphone-portrait.png"  />
+
+        <preference name="Orientation" value="all" />
+        <hook src="hooks/iosrtc-swift-support.js" type="after_platform_add" />
+        <config-file parent="CFBundleURLTypes" target="*-Info.plist">
+            <array>
+                <key>NSAppTransportSecurity</key>
+                <dict>
+                    <key>NSAllowsArbitraryLoads</key>
+                    <true />
+                </dict>
+            </array>
+        </config-file>
+        <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+            <string>WebRTC uses your camera to make video calls.</string>
+        </config-file>
+        <config-file parent="NSMicrophoneUsageDescription" platform="ios" target="*-Info.plist">
+            <string>WebRTC uses your microphone to make voice calls.</string>
+        </config-file>
+    </platform>
+    <preference name="Fullscreen" value="false" />
+    <preference name="WebViewBounce" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="TopActivityIndicator" value="white" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#e4685d" />
+</widget>
