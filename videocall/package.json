@@ -3,13 +3,38 @@
   "version": "3.0.4",
   "displayName": "Video Conferencing",
   "cordova": {
-    "platforms": [],
-    "plugins": {}
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "plugins": {
+      "cordova-plugin-android-permissions": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-iosrtc": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "org.devgeeks.Canvas2ImagePlugin": {}
+    }
   },
-  "dependencies": {},
+  "dependencies": {
+    "cordova-android": "^6.3.0",
+    "cordova-ios": "^4.4.0",
+    "cordova-plugin-android-permissions": "^1.0.0",
+    "cordova-plugin-canvas2image": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-iosrtc": "^4.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3"
+  },
   "scripts": {
-    "preinstall": "cordova plugin add git+https://github.com/devgeeks/Canvas2ImagePlugin.git cordova-plugin-android-permissions@latest cordova-plugin-device@latest cordova-plugin-iosrtc@latest cordova-plugin-statusbar@latest cordova-plugin-whitelist@latest",
-    "install": "cordova platform add android@6.3.0 ios@4.4.0",
+    "add:canvas": "cordova plugin add git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
+    "add:permissions": "cordova plugin add cordova-plugin-android-permissions@latest",
+    "add:device": "cordova plugin add cordova-plugin-device@latest",
+    "add:iosrtc": "cordova plugin add cordova-plugin-iosrtc@latest",
+    "add:statusbar": "cordova plugin add cordova-plugin-statusbar@latest",
+    "add:whitelist": "cordova plugin add cordova-plugin-whitelist@latest",
+    "preinstall": "cordova platform add android@6.3.0 ios@4.4.0",
+    "install": "yarn add:canvas && yarn add:permissions && yarn add:device && yarn add:iosrtc && yarn add:statusbar && yarn add:whitelist",
     "postinstall": "cordova build android && cordova prepare ios ",
     "xcode": "cd platforms/ios && xed .",
     "studio": "open -a /Applications/Android\\ Studio.app platforms/android/",
